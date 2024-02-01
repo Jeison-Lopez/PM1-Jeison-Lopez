@@ -8,8 +8,9 @@
     <title>Presentación</title>
   </head>
   <body>
-    <h1>Jeison Arroyave Lopez</h1>
-
+    <header>
+      <h1>Jeison Arroyave Lopez</h1>
+    </header>
     <section>
       <h2>Sobre mí</h2>
       <p>
@@ -61,7 +62,7 @@
         <input
           type="text"
           id="titulo"
-          name="titulo"
+          name="tituloName"
           placeholder="Nombre de la actividad"
         />
         <br />
@@ -69,7 +70,7 @@
         <textarea
           type="text"
           id="descripcion"
-          name="descripcion"
+          name="descripcionName"
           placeholder="Breve descripción de la actividad"
         ></textarea>
         <br />
@@ -77,14 +78,13 @@
         <input
           type="text"
           id="imagen"
-          name="imagen"
+          name="imagenName"
           placeholder="Dirección de la imagen"
         />
         <br />
-        <input type="submit" value="Enviar" />
+        <button id="addActivityButton">Agregar Actividad</button>
       </form>
     </section>
-    <div class="contenedor"></div>
     <sript src="/scripts/index.js"></sript>
   </body>
 </html>
