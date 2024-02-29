@@ -1,101 +1,127 @@
+// ECMAScript 2
+// Clase Activity la cual representa las actividades que se crearán.
 class Activity {
-  constructor(id, title, description, imgurl) {
-    this.id = id;
-    this.title = title;
-    this.description = description;
-    this.imgurl = imgurl;
+  constructor(id, title, description, imgUrl) {
+    (this.id = id),
+      (this.title = title),
+      (this.description = description),
+      (this.imgUrl = imgUrl);
   }
 }
-
+// Clase Repository la cual crea, almacena y manipula las actividades.
 class Repository {
   constructor() {
     this.activities = [];
+    this.counter = 1;
   }
-
   getAllActivities() {
     return this.activities;
   }
-
-  createActivity(id, title, description, imgurl) {
-    const newActivity = new Activity(id, title, description, imgurl);
-    this.activities.push(newActivity);
-    return newActivity;
+  createActivity(title, description, imgUrl) {
+    const id = this.counter++;
+    const activity = new Activity(id, title, description, imgUrl);
+    this.activities.push(activity);
   }
-
   deleteActivity(id) {
-    const activityToDelete = this.activities.find(
-      (activity) => activity.id === id
-    );
-    if (activityToDelete) {
-    }
     this.activities = this.activities.filter((activity) => activity.id !== id);
   }
 }
-
+// DOM
+// Instancia con la cual se va a trabajar.
 const repository = new Repository();
-
+// Función que crea la estructura HTML a la clase Activity
 function createHTMLFromActivity(activity) {
-  const { title, description, imgurl } = activity;
+  // Destructuring: Se descompone el objeto activity en sus propiedades individuales.
+  const { title, description, imgUrl } = activity;
 
   const activityDiv = document.createElement("div");
+  activityDiv.className = "styleDiv";
 
   const titleElement = document.createElement("h3");
-  titleElement.textContent = title;
+  titleElement.innerHTML = title;
 
   const descriptionElement = document.createElement("p");
-  descriptionElement.textContent = description;
+  descriptionElement.innerHTML = description;
 
-  const imageElement = document.createElement("img");
-  imageElement.src = imgurl;
-  imageElement.alt = title;
-  imageElement.width = 100;
+  const imgUrlElement = document.createElement("img");
+  imgUrlElement.src = imgUrl;
+  imgUrlElement.alt = title;
+  imgUrlElement.width = 100;
 
   activityDiv.appendChild(titleElement);
   activityDiv.appendChild(descriptionElement);
-  activityDiv.appendChild(imageElement);
+  activityDiv.appendChild(imgUrlElement);
+  //-----------------------------------------------------------------------------------------
+  // Agregar un atributo de identificación al elemento div para poder identificarlo más tarde
+  //-----------------------------------------------------------------------------------------
+  activityDiv.dataset.activityId = activity.id;
+  //----------------------------------------------------------------------------------------------------------------------------
+  //Evento de "click" para cada elemento de actividad HTML generado, pasándole como cb una función la cual elimina la actividad.
+  //----------------------------------------------------------------------------------------------------------------------------
+  activityDiv.addEventListener("click", handleActivityClick);
 
   return activityDiv;
 }
-
-function renderActivities(repository, containerId) {
-  const container = document.getElementById(containerId);
-  container.innerHTML = "";
-  const activities = repository.getAllActivities();
-  const activityElements = activities.map(createHTMLFromActivity);
-  activityElements.forEach((activityElement) => {
-    container.appendChild(activityElement);
-  });
+//------------------------------------------------------------------------------
+// Función encargada de eliminar la actividad la cual escucha el evento "click".
+//------------------------------------------------------------------------------
+function handleActivityClick(event) {
+  //---------------------------------------------------------------------
+  // Obtener el ID de la actividad del atributo de datos del elemento div
+  //---------------------------------------------------------------------
+  const activityId = event.currentTarget.dataset.activityId;
+  //------------------------------------------------------------
+  // Llamar al método para eliminar la actividad del repositorio
+  //------------------------------------------------------------
+  repository.deleteActivity(parseInt(activityId)); // Parseamos a entero ya que el ID puede estar almacenado como string
+  //-------------------------------------------------------------------------------
+  // Volver a renderizar las actividades para reflejar los cambios en el contenedor
+  //-------------------------------------------------------------------------------
+  renderActivities();
 }
-
-function handleAddActivityClick(event) {
-  event.preventDefault();
-  const titleInput = document.getElementById("titleInput");
-  const descriptionInput = document.getElementById("descriptionInput");
-  const imgurlInput = document.getElementById("imgurlInput");
-
-  const title = titleInput.value;
-  const description = descriptionInput.value;
-  const imgrul = imgurlInput.value;
-
-  if (!title || !description || !imgurl) {
-    alert("Por favor, completa todos lso campos.");
+// Función que convierte TODAS las actividades en elementos HTML
+function renderActivities() {
+  // Selección del contenedor
+  const container = document.getElementById("container");
+  // Vaciar contenedor
+  container.innerHTML = "";
+  // Obtener array de actividades
+  const activities = repository.getAllActivities();
+  // Mapeo (modificación) del listado de actividades para convetirlos en elementos HTML
+  const htmlElements = activities.map((act) => createHTMLFromActivity(act));
+  // Appendear todos los elementos HTML del nuevo array dentro del contenedor
+  htmlElements.forEach((activityHtml) => container.appendChild(activityHtml));
+}
+// Se captura el boton
+const button = document.querySelector("#add");
+// Función handler
+function handler() {
+  // Capturo inputs
+  const title = document.getElementById("titulo");
+  const description = document.getElementById("descripcion");
+  const imgUrl = document.getElementById("imagen");
+  // Extraigo valores
+  const valueTitle = title.value;
+  const valueDescription = description.value;
+  const valueImgUrl = imgUrl.value;
+  // Validación
+  // Nota: Al negar (!) los valores, verfico si es true (osea que si tiene un contendio) y lo vuelvo false para que no entre al if y viceversa
+  // Nota2: El or (||) se utiliza para que TODOS los valores esten completos
+  if (!valueTitle || !valueDescription || !valueImgUrl) {
+    // Alerta por si algún valor esta sin llenar
+    alert("¡Debes llenar todos los campos!");
     return;
   }
-
-  const newActivity = new Activity(Date.now(), title, description, imgrul);
-
-  repository.addActivity(newActivity);
-
-  renderActivities(repository, "activityContainer");
-
-  titleInput.value = "";
-  descriptionInput.value = "";
-  imgurlInput.value = "";
-
-  const addButton = document.getElementById("addActivityButton");
-  if (addButton) {
-    addButton.addEventListener("click", handleAddActivityClick);
-  } else {
-    console.error('El botón con ID "addActivityButton" no fue encontrado');
-  }
+  // Llamar la instancia de Repository para crear una nueva actividad
+  repository.createActivity(valueTitle, valueDescription, valueImgUrl);
+  // Refresco el contenedor
+  renderActivities();
 }
+// Manejador o constructor del evento
+button.addEventListener("click", handler);
+
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+});

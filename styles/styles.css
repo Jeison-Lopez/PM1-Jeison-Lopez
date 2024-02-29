@@ -1,120 +1,94 @@
+/* Estilos generales */
 body {
-  background-color: #280274;
-  font-family: "Roboto";
-  color: #3652ad;
+  background-color: rgba(85, 80, 80, 0.678);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-  background-color: #fe7a36;
-  color: #3652ad;
-  padding: 10px 0px 2px 0px;
+  background-color: #1f3a93;
+  color: #ffffff;
+  padding: 20px;
   text-align: center;
-  box-shadow: 1px 1px 10px #fe7a36;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
 }
 
 h1 {
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-}
-
-nav {
-  width: 100%;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-}
-
-li {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  cursor: pointer;
-}
-
-li:hover {
-  color: #fe7a36;
-}
-
-main {
-  margin-top: 6rem;
+  margin: 0;
 }
 
 section {
-  background-color: #e9f6ff;
-  margin: 3rem;
-  text-align: center;
-  padding: 10px 0px 10px 0px;
-  box-shadow: 1px 1px 10px #fe7a36;
-  color: #280274;
-  border-radius: 10px;
+  padding: 20px;
 }
 
 h2 {
-  font-family: "Times New Roman", Times, serif, Helvetica, sans-serif;
-  background-color: #3652ad3c;
+  color: #1f3a93;
 }
 
-h3 {
-  margin-bottom: 1rem;
+p {
+  line-height: 1.6;
 }
 
-img {
-  width: 5rem;
-}
-
-img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-form div {
-  display: flex;
-  margin: 1rem;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-input,
-textarea {
-  color: antiquewhite;
-  background-color: #e9f6ff;
+div {
+  display: inline-block;
   margin: 10px;
 }
 
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
 label {
-  text-align: center;
+  display: block;
+  margin-bottom: 5px;
+  color: #1f3a93;
 }
 
-#add {
-  border-radius: 4px;
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
 }
 
-#add:hover {
-  background-color: #fe7a36;
-  color: #280274;
+button {
+  background-color: #1f3a93;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-footer {
-  background-color: aliceblue;
-  color: #280274;
-  font-size: smaller;
-  font-family: cursive;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+button:hover {
+  background-color: #7ec8e3;
 }
 
-img {
-  display: flexbox;
-  left: 200pxs;
+/* Estilos específicos para la sección de actividades */
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.activity {
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.activity img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
