@@ -69,11 +69,11 @@ function handleActivityClick(event) {
   //---------------------------------------------------------------------
   // Obtener el ID de la actividad del atributo de datos del elemento div
   //---------------------------------------------------------------------
-  const activityId = event.currentTarget.dataset.activityId;
+  const activity = event.currentTarget.dataset.activityId;
   //------------------------------------------------------------
   // Llamar al método para eliminar la actividad del repositorio
   //------------------------------------------------------------
-  repository.deleteActivity(parseInt(activityId)); // Parseamos a entero ya que el ID puede estar almacenado como string
+  repository.deleteActivity(parseInt(activity)); // Parseamos a entero ya que el ID puede estar almacenado como string
   //-------------------------------------------------------------------------------
   // Volver a renderizar las actividades para reflejar los cambios en el contenedor
   //-------------------------------------------------------------------------------
