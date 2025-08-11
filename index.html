@@ -5,87 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/styles.css" />
-    <title>Presentación</title>
+    <title>Sobre mí</title>
+    <link rel="icon" type="image/png" href="/images/picture.png">
   </head>
   <body>
     <header>
       <h1>Jeison Arroyave Lopez</h1>
     </header>
+
     <section>
       <h2>Sobre mí</h2>
       <p>
-        Soy un estudiante apasionado de programación web full stack en Soy
-        Henry, inmerso en el fascinante mundo de la tecnología. Mi travesía ha
-        comenzado con la adquisición conocimientos en HTML, CSS y JavaScript,
-        las herramientas fundamentales que constituyen el andamiaje esencial
-        para cualquier desarrollador web. En mi recorrido académico, he
-        explorado las complejidades del desarrollo full stack, abordando tanto
-        el frontend como el backend con la versatilidad de JavaScript. Mi
-        enfoque no se limita solo a adquirir habilidades técnicas; soy un
-        entusiasta incansable del conocimiento, siempre buscando oportunidades
-        para aprender nuevas tecnologías y tendencias en el mundo del desarrollo
-        web. La evolución constante del campo me inspira a mantenerme
-        actualizado, participar en proyectos desafiantes y colaborar con otros
-        apasionados por la tecnología. Mi objetivo no es solo dominar las
-        herramientas y los lenguajes de programación, sino también aplicarlos de
-        manera creativa para resolver problemas y crear soluciones innovadoras.
-        La resolución de desafíos complejos y la creación de experiencias
-        interactivas son aspectos que encuentro particularmente gratificantes en
-        mi viaje como desarrollador web.
+        Apasionado por la programación, inmerso en el fascinante mundo de la
+        tecnología. Mi travesía comenzó con la adquisición de conocimientos
+        básicos en Python, para luego incursionar en HTML, CSS y JavaScript,
+        hasta llegar a dominar un amplio espectro de tecnologías y habilidades.
+        Durante mi recorrido académico, he explorado las complejidades del
+        desarrollo web full stack. Mi enfoque no solo se limita a adquirir
+        habilidades técnicas, sino también a desarrollar competencias blandas
+        esenciales para el trabajo en equipo. La constante evolución del campo
+        tecnológico me inspira a mantenerme actualizado, participar en proyectos
+        desafiantes y colaborar con otros apasionados por la tecnología. Mi
+        objetivo es aplicar de forma creativa mis conocimientos para resolver
+        problemas y, sobre todo, crear soluciones innovadoras.
       </p>
     </section>
 
     <section>
       <h2>Mis tecnologías favoritas</h2>
-
       <div>
-        <img src="/images/HTML.png" alt="Logo HTML" width="100px" />
+        <img src="/images/html.png" alt="Logo HTML" width="100px" />
         <p>HTML</p>
       </div>
-
       <div>
-        <img src="/images/JS.png" alt="Logo JS" width="100px" />
-        <p>JS</p>
+        <img src="/images/javascript.png" alt="Logo JavaScript" width="100px" />
+        <p>JavaScript</p>
       </div>
-
       <div>
-        <img src="/images/CSS.png" alt="Logo CSS" width="100px" />
+        <img src="/images/css.png" alt="Logo CSS" width="100px" />
         <p>CSS</p>
       </div>
     </section>
 
     <section>
-      <h2>Mis actividades favoritas</h2>
-      <form id="form">
-        <label for="titulo">Título</label>
+      <h2>Mis actividades favoritas</h2> 
+
+      <form id="activity">
+        <label for="name">Nombre de la actividad</label>
         <input
           type="text"
-          id="titulo"
-          name="tituloName"
-          placeholder="Nombre de la actividad"
+          id="name"
+          name="activityName"
+          placeholder="Nombre de la actividad favorita"
         />
         <br />
-        <label for="descripcion">Descripción</label>
+
+        <label for="description">Descripción</label>
         <textarea
           type="text"
-          id="descripcion"
-          name="descripcionName"
+          id="description"
+          name="activityDescription"
           placeholder="Breve descripción de la actividad"
         ></textarea>
         <br />
-        <label for="imagen">URL de Imagen</label>
+
+        <label for="image">URL de Imagen</label>
         <input
           type="text"
-          id="imagen"
-          name="imagenName"
-          placeholder="Dirección de la imagen"
+          id="image"
+          name="urlImage"
+          placeholder="Dirección URL de la imagen"
         />
         <br />
+
         <button type="submit" id="add">Agregar Actividad</button>
       </form>
     </section>
+
     <!--Contenedor de las actividades-->
     <div id="container"></div>
+
     <script type="module" src="/scripts/models.js"></script>
     <script type="module" src="/scripts/index.js"></script>
   </body>
