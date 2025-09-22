@@ -1,5 +1,5 @@
 // Importamos la clase Repositoy de el archivo models.js.
-import { Repository } from "./models.js";
+import { Repository } from "../src/components/models.js";
 // DOM
 // Instancia con la cual se va a trabajar.
 const repository = new Repository();
