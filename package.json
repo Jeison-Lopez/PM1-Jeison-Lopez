@@ -1,21 +1,19 @@
 {
   "name": "m1",
   "version": "1.0.0",
-  "description": "",
+  "description": "personal project",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine",
-    "start": "live-server"
+    "start": "vite",
+    "test": "jasmine"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jeison Arroyave Lopez",
   "license": "ISC",
-  "dependencies": {
-    "jasmine": "^5.1.0",
-    "live-server": "^1.2.2"
-  },
   "devDependencies": {
-    "jasmine-browser-runner": "^2.3.0",
-    "jasmine-core": "^5.1.2"
+    "vite": "^7.1.7",
+    "jasmine": "^5.1.0",
+    "jasmine-core": "^5.1.2",
+    "jasmine-browser-runner": "^2.3.0"    
   }
 }
