@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/assets/styles/reset.css" />
     <link rel="stylesheet" href="/src/assets/styles/styles.css" />
-    <title>Sobre mí</title>
+    <title>Portafolio Personal</title>
     <link rel="icon" type="image/png" href="/public/favicon.png">
   </head>
   <body>
     <header>
-      <h1>Jeison Arroyave Lopez</h1>
+      <h1>Jeison</h1>
     </header>
 
     <section>
-      <h2>Sobre mí</h2>
+      <h2>Desarrollador Web Full Stack</h2>
       <p>
         Apasionado por la programación, inmerso en el fascinante mundo de la
         tecnología. Mi travesía comenzó con la adquisición de conocimientos
@@ -31,27 +31,25 @@
       </p>
     </section>
 
-    <section>
+    <section class="technologies">
       <h2>Mis tecnologías favoritas</h2>
-      <div>
-        <img src="/images/html.png" alt="Logo HTML" width="100px" />
-        <p>HTML</p>
-      </div>
-      <div>
-        <img src="/images/javascript.png" alt="Logo JavaScript" width="100px" />
-        <p>JavaScript</p>
-      </div>
-      <div>
-        <img src="/images/css.png" alt="Logo CSS" width="100px" />
-        <p>CSS</p>
+      <div class="tech-list">
+        <div>
+          <img src="/src/assets/images/html.png" alt="Logo HTML" width="100px" />
+        </div>
+        <div>
+          <img src="/src/assets/images/javascript.png" alt="Logo JavaScript" width="100px" />
+        </div>
+        <div>
+          <img src="/src/assets/images/css.png" alt="Logo CSS" width="100px" />
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Mis actividades favoritas</h2> 
-
+    <section class="form">
+      <h2>Inspira con tu Propuesta</h2> 
       <form id="activity">
-        <label for="name">Nombre de la actividad</label>
+        <label for="name">Nombre de la propuesta</label><br />
         <input
           type="text"
           id="name"
@@ -59,8 +57,7 @@
           placeholder="Nombre de la actividad favorita"
         />
         <br />
-
-        <label for="description">Descripción</label>
+        <label for="description">Descripción</label><br />
         <textarea
           type="text"
           id="description"
@@ -68,8 +65,7 @@
           placeholder="Breve descripción de la actividad"
         ></textarea>
         <br />
-
-        <label for="image">URL de Imagen</label>
+        <label for="image">Imagen (URL)</label><br />
         <input
           type="text"
           id="image"
@@ -77,13 +73,13 @@
           placeholder="Dirección URL de la imagen"
         />
         <br />
-
-        <button type="submit" id="add">Agregar Actividad</button>
+        <button type="submit" id="add">Agregar</button>
       </form>
     </section>
+
     <div id="container"></div>
 
-    <script type="module" src="/src/components/models.js"></script>
     <script type="module" src="/src/index.js"></script>
+    <script type="module" src="/src/components/models.js"></script>
   </body>
 </html>
