@@ -1,5 +1,84 @@
+:root {
+  --color-bg: #fafafa;
+  --color-text: #111111;
+  --color-muted: #555555;
+  --color-accent: #000000;
+  --color-border: #e0e0e0;
+  --color-hover: #333333;
+
+  --font-base: 'Roboto Serif', serif;
+  --font-title: 'Bebas Neue', sans-serif;
+  --font-hand: 'Dancing Script', cursive;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2x1: 2rem;
+  --fs-3x1: 2.5rem;
+  --fs-4x1: 3rem;
+}
+
 body {
-  background-color: #ffffff;
+  font-family: var(--font-base);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+}
+
+.signature {
+  font-family: var(--font-hand);
+  font-size: var(--fs-2x1);
+  color: var(--color-text);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 15px 60px;
+}
+
+.hero-text h1 { 
+  font-family: var(--font-title);
+  font-size: var(--fs-4x1);
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.hero-text p {
+  color: var(--color-muted);
+  font-size: var(--fs-lg);
+  margin-bottom: 24px;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  max-width: 80%;
+  height: auto;
+}
+
+h2 {
+  font-family: var(--font-alt);
+  font-size: var(--fs-2x1);
+  color: var(--color-text);
 }
 
 .technologies {
@@ -19,16 +98,4 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-
-h1 {
-  font-family: 'Dancing Script', cursive;
-}
-
-h2 {
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-P {
-  font-family: 'Roboto Serif', serif;
 }
