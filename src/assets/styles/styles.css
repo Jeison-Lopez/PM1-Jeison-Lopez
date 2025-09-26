@@ -34,7 +34,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 60px;
+  padding: 15px 60px 0px;
 }
 
 .signature {
@@ -76,15 +76,23 @@ header {
 }
 
 h2 {
-  font-family: var(--font-alt);
-  font-size: var(--fs-2x1);
-  color: var(--color-text);
+  font-family: var(--font-base);
+  font-size: var(--fs-3x1);
+  color: var(--color-hover);
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 15px 60px;
 }
 
 .technologies {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  text-align: left;
 }
 
 .tech-list {
@@ -95,7 +103,6 @@ h2 {
 
 .form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
 }
