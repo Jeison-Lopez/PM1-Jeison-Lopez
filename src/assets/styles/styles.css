@@ -40,7 +40,6 @@ header {
 .signature {
   font-family: var(--font-hand);
   font-size: var(--fs-2x1);
-  color: var(--color-text);
 }
 
 .hero {
@@ -55,7 +54,6 @@ header {
   font-family: var(--font-title);
   font-size: var(--fs-4x1);
   line-height: 1.1;
-  color: var(--color-text);
   margin-bottom: 16px;
 }
 
