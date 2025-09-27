@@ -79,6 +79,7 @@ h2 {
   font-family: var(--font-base);
   font-size: var(--fs-3x1);
   color: var(--color-hover);
+  padding-right: 10px ;
 }
 
 .content-wrapper {
@@ -106,4 +107,34 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+input::placeholder, textarea::placeholder {
+  font-family: var(--font-base);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+  opacity: 0.8;
+}
+
+form input, form textarea {
+  width: 21vw;
+  max-width: 400px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 20px;
+}
+
+#add {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: var(--fs-sm);
 }
